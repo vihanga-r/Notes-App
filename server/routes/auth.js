@@ -60,7 +60,7 @@ router.get('/logout', (req, res) => {
     } else {
       res.redirect('/')
     }
-  })
+  });
 });
 
 // Persist user data after successful authentication

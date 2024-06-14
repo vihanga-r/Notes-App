@@ -1,3 +1,6 @@
+const Note = require('../models/Notes');
+const mongoose = require('mongoose');
+
 /**
  * GET /
  * Dashboard
@@ -8,8 +11,18 @@ exports.dashboard = async (req, res) => {
         description: "Free Nodejs Notes App",
     }
 
-    res.render('dashboard/index', {
-        locals,
-        layout: '../views/layouts/dashboard' 
-    });
+    try {
+        const notes = await Note.find({});
+        
+        res.render('dashboard/index', {
+            userName: req.user.firstName,
+            locals,
+            notes,
+            layout: '../views/layouts/dashboard' 
+        });
+    } catch (error) {
+        
+    }
+
+    
 }
