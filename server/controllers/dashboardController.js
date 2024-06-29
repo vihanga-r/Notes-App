@@ -46,3 +46,17 @@ exports.dashboard = async (req, res) => {
       console.log(error);
     }
   };
+
+  /**
+ * GET /
+ * View Specific Note
+ */
+
+exports.dashboardViewNote = async(req, res) => {
+
+}
+
+
+exports.dashboardUpdateNote = async(req, res) => {
+  
+}
